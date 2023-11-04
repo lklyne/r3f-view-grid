@@ -13,6 +13,7 @@ body,
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 10px;
+    height: auto;
     /* padding: 10px; */
     background-color: green;
 }
@@ -26,7 +27,7 @@ body,
 
 .canvas {
     pointer-events: none;
-    position: absolute !important;
+    position: fixed !important;
     /* top: 0px;
     left: 0px; */
     /* width: 100vw; */
