@@ -1,27 +1,29 @@
 import { useRef } from "react"
 import { Canvas } from "@react-three/fiber"
+import { View } from "@react-three/drei"
 
 import Scene from "./Scene.jsx"
 
 export default function App() {
     const container = useRef()
-    const tracking = useRef()
-
-    console.log("it works")
+    const tracking1 = useRef()
+    const tracking2 = useRef()
 
     return (
         <main className="container">
-            <div ref={tracking} className="view-box"></div>
+            <div ref={tracking1} className="view-box"></div>
+            <div ref={tracking2} className="view-box"></div>
 
             <Canvas
-                camera={{
-                    fov: 25,
-                    near: 0.1,
-                    far: 200,
-                    position: [4, 2, 6],
-                }}
+                eventSource={document.getElementById("root")}
+                className="canvas"
             >
-                <Scene />
+                <View track={tracking1}>
+                    <Scene />
+                </View>
+                <View track={tracking2}>
+                    <Scene />
+                </View>
             </Canvas>
         </main>
     )

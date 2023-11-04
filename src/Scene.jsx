@@ -1,4 +1,4 @@
-import { OrbitControls } from "@react-three/drei"
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei"
 import { EffectComposer, Noise, Bloom } from "@react-three/postprocessing"
 import { Perf } from "r3f-perf"
 import { BlendFunction, GlitchMode } from "postprocessing"
@@ -12,19 +12,20 @@ export default function Scene() {
         <>
             <color attach="background" args={[getRandomColor()]} />
 
-            <EffectComposer multisampling={8}>
+            {/* <EffectComposer multisampling={8}>
                 <Noise premultiply blendFunction={BlendFunction.OVERLAY} />
                 <Bloom mipmapBlur intensity={1.5} luminanceThreshold={0.0} />
-                {/* <DepthOfField
+                <DepthOfField
                     focusDistance={0.025}
                     focalLength={0.025}
                     bokehScale={6}
-                /> */}
-            </EffectComposer>
+                />
+            </EffectComposer> */}
 
             {/* <Perf position="top-left" /> */}
 
             <OrbitControls makeDefault />
+            <PerspectiveCamera makeDefault position={[0, 0, 4]} />
 
             <directionalLight castShadow position={[1, 2, 3]} intensity={1.5} />
             <ambientLight intensity={0.5} />
