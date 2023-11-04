@@ -15,16 +15,11 @@ export default function Scene() {
             {/* <EffectComposer multisampling={8}>
                 <Noise premultiply blendFunction={BlendFunction.OVERLAY} />
                 <Bloom mipmapBlur intensity={1.5} luminanceThreshold={0.0} />
-                <DepthOfField
-                    focusDistance={0.025}
-                    focalLength={0.025}
-                    bokehScale={6}
-                />
             </EffectComposer> */}
 
             {/* <Perf position="top-left" /> */}
 
-            <OrbitControls makeDefault />
+            <OrbitControls makeDefault enableZoom={false} />
             <PerspectiveCamera makeDefault position={[0, 0, 4]} />
 
             <directionalLight castShadow position={[1, 2, 3]} intensity={1.5} />

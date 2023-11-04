@@ -5,25 +5,24 @@ import { View } from "@react-three/drei"
 import Scene from "./Scene.jsx"
 
 export default function App() {
-    const container = useRef()
-    const tracking1 = useRef()
-    const tracking2 = useRef()
+    const numViews = 100 // Set the number of views you want
+    const trackingRefs = Array.from({ length: numViews }, () => useRef())
 
     return (
         <main className="container">
-            <div ref={tracking1} className="view-box"></div>
-            <div ref={tracking2} className="view-box"></div>
+            {trackingRefs.map((ref, index) => (
+                <div key={index} ref={ref} className="view-box"></div>
+            ))}
 
             <Canvas
                 eventSource={document.getElementById("root")}
                 className="canvas"
             >
-                <View track={tracking1}>
-                    <Scene />
-                </View>
-                <View track={tracking2}>
-                    <Scene />
-                </View>
+                {trackingRefs.map((ref, index) => (
+                    <View key={index} track={ref}>
+                        <Scene />
+                    </View>
+                ))}
             </Canvas>
         </main>
     )
