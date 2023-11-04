@@ -8,3 +8,10 @@ body,
     height: 100%;
     background: ivory;
 }
+
+.view-box {
+    width: 200px;
+    height: 200px;
+    z-index: 2;
+    position: fixed;
+}
