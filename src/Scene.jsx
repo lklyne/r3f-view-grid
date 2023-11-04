@@ -1,6 +1,5 @@
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei"
 import { EffectComposer, Noise, Bloom } from "@react-three/postprocessing"
-import { Perf } from "r3f-perf"
 import { BlendFunction, GlitchMode } from "postprocessing"
 import { useControls } from "leva"
 
@@ -16,8 +15,6 @@ export default function Scene() {
                 <Noise premultiply blendFunction={BlendFunction.OVERLAY} />
                 <Bloom mipmapBlur intensity={1.5} luminanceThreshold={0.0} />
             </EffectComposer> */}
-
-            {/* <Perf position="top-left" /> */}
 
             <OrbitControls makeDefault enableZoom={false} />
             <PerspectiveCamera makeDefault position={[0, 0, 4]} />

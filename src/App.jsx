@@ -1,6 +1,7 @@
 import { useRef } from "react"
 import { Canvas } from "@react-three/fiber"
 import { View } from "@react-three/drei"
+import { Perf } from "r3f-perf"
 
 import Scene from "./Scene.jsx"
 
@@ -18,6 +19,8 @@ export default function App() {
                 eventSource={document.getElementById("root")}
                 className="canvas"
             >
+                <Perf position="top-left" />
+
                 {trackingRefs.map((ref, index) => (
                     <View key={index} track={ref}>
                         <Scene />

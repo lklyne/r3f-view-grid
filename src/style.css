@@ -14,8 +14,7 @@ body,
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 10px;
     /* padding: 10px; */
-    height: auto;
-    overflow: scroll;
+    background-color: green;
 }
 
 .view-box {
@@ -28,8 +27,9 @@ body,
 .canvas {
     pointer-events: none;
     position: absolute !important;
-    top: 0px;
-    left: 0px;
-    width: 100vw;
+    /* top: 0px;
+    left: 0px; */
+    /* width: 100vw; */
+    background-color: red;
     /* height: 100vh; */
   }
