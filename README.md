@@ -1,12 +1,3 @@
-# r3f-vite-starter
- Starter template for react-three-fiber using vite.
+# r3f-view-grid
 
- Includes 
-- React-three/fiber
-- React-three/drei
-- React-three/postprocessing
-- leva
-- r3f-perf
-- threejs
-- prettier
-- eslint
+Attempt to create a series of small r3f scenes in a performant way.
