@@ -1,6 +1,7 @@
 import { useRef } from "react"
 import { Canvas } from "@react-three/fiber"
 import { View } from "@react-three/drei"
+import { EffectComposer, Noise, Bloom } from "@react-three/postprocessing"
 import { Perf } from "r3f-perf"
 
 import Scene from "./Scene.jsx"
@@ -21,11 +22,20 @@ export default function App() {
             >
                 <Perf position="top-left" />
 
-                {trackingRefs.map((ref, index) => (
-                    <View key={index} track={ref}>
-                        <Scene />
-                    </View>
-                ))}
+                <EffectComposer multisampling={8}>
+                    {/* <Noise premultiply blendFunction={BlendFunction.OVERLAY} /> */}
+                    <Bloom
+                        mipmapBlur
+                        intensity={1.5}
+                        luminanceThreshold={0.1}
+                    />
+
+                    {trackingRefs.map((ref, index) => (
+                        <View key={index} track={ref}>
+                            <Scene />
+                        </View>
+                    ))}
+                </EffectComposer>
             </Canvas>
         </main>
     )

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 
+// comprehensive list of CSS colors
 // const cssColors = [
 //     "AliceBlue",
 //     "Aqua",
@@ -131,6 +132,7 @@ import { useState, useEffect } from "react"
 
 // Function to get a random color from the array
 
+// just the darker ones
 const cssColors = [
     "Black",
     "Blue",
@@ -179,7 +181,6 @@ const getRandomColor = () => {
 
     useEffect(() => {
         const randomIndex = Math.floor(Math.random() * cssColors.length)
-        console.log(cssColors[randomIndex])
         setRandomColor(cssColors[randomIndex])
     }, [])
 

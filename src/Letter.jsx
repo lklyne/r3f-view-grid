@@ -8,7 +8,7 @@ export default function Letter() {
     // Get a random character
     const getRandomChar = () => {
         const characters =
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+            'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678{}Å,.<`|!\\:"#$%'
         const randomIndex = Math.floor(Math.random() * characters.length)
 
         return characters[randomIndex]
@@ -16,7 +16,7 @@ export default function Letter() {
 
     useFrame((state, delta) => {
         // letterRef.current.rotation.y += 0.05 * delta
-        letterRef.current.rotation.y += 0.1 * delta
+        letterRef.current.rotation.y += 0.25 * delta
     })
 
     return (
